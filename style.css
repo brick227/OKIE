@@ -108,3 +108,28 @@ header{
   .navglass{gap:.25rem; padding:6px}
   .navglass a{padding:.45rem .7rem; font-size:.95rem}
 }
+
+/* --- Header v10 tweaks --- */
+header{position:sticky;top:0;z-index:50;border-bottom:1px solid #1f2937;
+  background:linear-gradient(90deg,#0f172a,#111827);backdrop-filter:saturate(120%) blur(6px)}
+.header-wrap{max-width:1200px;margin:0 auto;padding:8px 16px}
+.brandbar{display:grid;grid-template-columns:84px 1fr 84px;align-items:center;gap:12px}
+.brandbar .logo{height:64px;width:auto;border-radius:10px;background:#0c1526;border:1px solid #1f2937;box-shadow:0 2px 10px rgba(0,0,0,.25);object-fit:contain;padding:4px}
+.brandbar .titles{text-align:center;line-height:1.05}
+.brandbar .okie{font-weight:900;letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(2.1rem,3.2vw + 1rem,3.4rem);color:#e7f1ff}
+.brandbar .sub{font-weight:600;color:#cfe1ff;opacity:.95;font-size:clamp(1rem,1vw + .35rem,1.25rem)}
+.navwrap{display:flex;justify-content:center;margin:8px 0 4px}
+.navglass{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;border-radius:999px;padding:8px 10px;
+  background:rgba(17,24,39,.55);border:1px solid rgba(51,65,85,.6)}
+.navglass a{color:#e5e7eb;text-decoration:none;padding:.5rem .9rem;border-radius:999px;border:1px solid rgba(51,65,85,.7)}
+.navglass a:hover{background:rgba(30,41,59,.6)}
+main .container{padding-top:20px}
+.menu-grid{margin-top:8px}
+@media (max-width:640px){
+  .brandbar{grid-template-columns:60px 1fr 60px}
+  .brandbar .logo{height:48px}
+}
+
+/* span full row for single last card */
+.menu-card.span-2{grid-column:1/-1}

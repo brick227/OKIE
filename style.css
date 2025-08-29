@@ -71,3 +71,40 @@ h1{font-size:clamp(1.5rem,2vw+1rem,2.25rem);margin:.25rem 0 0}
 header nav{display:flex;gap:.75rem;flex-wrap:wrap;margin:.65rem 0 0}
 header nav a{color:var(--text);text-decoration:none;padding:.55rem .9rem;border:1px solid #1f2937;border-radius:999px;opacity:.95}
 header nav a:hover{border-color:#334155;opacity:1}
+
+/* --- Opinionated Header v8 --- */
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(130%) blur(6px);
+  box-shadow:0 8px 30px rgba(0,0,0,.2);
+  background:
+    radial-gradient(1200px 400px at 50% -250px, rgba(56,189,248,.09), transparent 60%),
+    linear-gradient(90deg,#0f172a 0%, #111827 100%);
+  border-bottom:1px solid #1f2937;
+}
+.header-wrap{max-width:1200px;margin:0 auto;padding:10px 16px;}
+.brandbar{display:grid;grid-template-columns:80px 1fr 80px;align-items:center;gap:12px}
+.brandbar .logo{height:56px;width:auto;border-radius:10px;background:#0c1526;border:1px solid #1f2937;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.brandbar .titles{text-align:center;line-height:1.1}
+.brandbar .okie{font-weight:900;letter-spacing:.18em;text-transform:uppercase;
+  font-size:clamp(2.2rem,3.4vw + 1rem,3.8rem);color:#e7f1ff;text-shadow:0 10px 30px rgba(56,189,248,.18)}
+.brandbar .sub{font-weight:600;color:#cfe1ff;opacity:.95;font-size:clamp(1rem,1.1vw + .4rem,1.25rem);letter-spacing:.04em}
+.navwrap{display:flex;justify-content:center;margin:8px 0 4px}
+.navglass{
+  display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;
+  background:linear-gradient(180deg,rgba(17,24,39,.65),rgba(17,24,39,.35));
+  border:1px solid rgba(51,65,85,.6);
+  border-radius:999px;padding:8px 10px;
+  box-shadow:0 6px 20px rgba(0,0,0,.25), inset 0 1px rgba(255,255,255,.05);
+}
+.navglass a{
+  color:#e5e7eb;text-decoration:none;padding:.5rem .9rem;
+  border-radius:999px;border:1px solid rgba(51,65,85,.7);
+}
+.navglass a:hover{background:rgba(30,41,59,.6)}
+@media (max-width:640px){
+  .brandbar{grid-template-columns:56px 1fr 56px}
+  .brandbar .logo{height:44px}
+  .navglass{gap:.25rem; padding:6px}
+  .navglass a{padding:.45rem .7rem; font-size:.95rem}
+}
